@@ -115,7 +115,7 @@ import "./App.css"
                             </Card>
                           </Col>
                           <Col xs={9} lg={7}>
-                            <h5 className="card-title m-0" style={{ fontSize: "1.6rem" }}>{this.state.data?.name} ({this.state.data?.id})</h5>
+                            <h5 className="card-title m-0" style={{ fontSize: "1.6rem" }}>{this.state.data?.name} {/* ({this.state.data?.id}) */}</h5>
                             <hr className="hr"/>
                             <p class="p-1 m-0"></p>
                             <Row>
