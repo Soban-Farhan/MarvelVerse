@@ -19,7 +19,7 @@ a:hover {
     color: black;
 }
 
-hr {
+.hr {
     height: 1px; 
     color: #fff; 
     background-color: black; 
@@ -31,3 +31,13 @@ hr {
 body {
     font-family: 'Montserrat';
 }
+
+.btn-primary{
+    background-color: #5cc7b2;
+    border: .5px #5cc7b2 solid;
+}
+
+/* .btn-primary:hover {
+    background-color: #52b19e;
+    border: .5px #52b19e solid;
+} */
