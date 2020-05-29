@@ -28,10 +28,18 @@ import "./App.css"
     }
 
     handleClick(id) {
-      const proxyurl = "https://thingproxy.freeboard.io/fetch/"
-      fetch(proxyurl + 'https://superheroapi.com/api/2965247393590510/' + id.toString())
+      const proxyurl = "https://cors-anywhere.herokuapp.com/"
+      fetch(proxyurl + 'https://superheroapi.com/api/2965247393590510/' + id.toString(), {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+          'Origin': ''
+        }
+      })
       .then(res => res.json())
       .then((result) => {
+        console.log('proxyurl', proxyurl);
         this.setState({ 
           show: true, 
           data: result,
