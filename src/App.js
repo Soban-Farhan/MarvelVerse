@@ -28,7 +28,8 @@ import "./App.css"
     }
 
     handleClick(id) {
-      fetch('https://superheroapi.com/api/2965247393590510/' + id.toString())
+      const proxyurl = "https://thingproxy.freeboard.io/fetch/"
+      fetch(proxyurl + 'https://superheroapi.com/api/2965247393590510/' + id.toString())
       .then(res => res.json())
       .then((result) => {
         this.setState({ 
@@ -36,7 +37,7 @@ import "./App.css"
           data: result,
         });
       })
-      
+      .catch((error) => console.error("Can’t access api. Error: " + error))
     }
 
     render() {
