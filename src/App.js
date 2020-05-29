@@ -124,11 +124,11 @@ import "./App.css"
       } else {
         return  <Row>
                   { this.state.result.map( x => {
-                    return  <Col xs={6} lg={2}>
-                              <div onClick={ () => this.handleClick(x[0]) }>
+                    return  <Col xs={6} lg={2} className='p-2'>
+                              <div className="border rounded h-100 shadow" onClick={ () => this.handleClick(x[0]) }>
                                 <Card className="img-container" style={{ backgroundImage: 'url('+ x[2] +')' }}>
                                 </Card>
-                                <p className="p-2" > {x[1]} </p>
+                                <p className="p-3" > {x[1]} </p>
                               </div>
                             </Col>
                   })}
@@ -136,14 +136,47 @@ import "./App.css"
                       size="xl"
                       show={this.state.show}
                       onHide={() => this.setState({ show: false })}
-                      dialogClassName="modal-90w"
                       aria-labelledby="example-custom-modal-styling-title"
+                      centered
                     >
-                      <Modal.Header closeButton>
-                      </Modal.Header>
                       <Modal.Body>
+                        <Row>
+                          <Col xs={3} lg={4}>
+                            <Card className="border rounded shadow">
+                              <img src={this.state.data?.image.url} width="100%" />
+                            </Card>
+                          </Col>
+                          <Col xs={9} lg={5}>
+                            <h5 className="card-title m-0" style={{ fontSize: "1.6rem"}}>{this.state.data?.name}</h5>
+                            <hr/>
+                            <p class="p-1 m-0"></p>
+                            <Row>
+                              <Col lg={6}>
+                                <p className="p-1 m-0">
+                                  <b><span style={{ fontSize: "13px"}}>Full Name:</span></b><br/>
+                                  <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.biography['full-name']}</h5>
+                                </p>
+                              </Col>
+                              <Col lg={6}>
+                                <p className="p-1 m-0">
+                                  <b><span style={{ fontSize: "13px"}}>Alter Ego:</span></b><br/>
+                                  <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.biography['alter-egos']}</h5>
+                                </p>
+                              </Col>
+                              <Col lg={12}>
+                                <p className="p-1 m-0">
+                                  <b><span style={{ fontSize: "13px"}}>Place of Birth:</span></b><br/>
+                                  <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.biography['place-of-birth']}</h5>
+                                </p>
+                              </Col>
+                            </Row>
+                          </Col>
+                          <Col xs={6} lg={3}>
+
+                          </Col>
+                        </Row>
                         <p>
-                          {this.state.data?.id}
+                          
                         </p>
                       </Modal.Body>
                     </Modal>

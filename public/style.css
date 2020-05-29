@@ -1,6 +1,6 @@
-#banner {
+body {
     background: url(background2.jpg);
-    background-position: top;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     /* height: 50vh; */

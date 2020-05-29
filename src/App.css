@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 .img-container {
-    width: 95%;
+    width: 100%;
     height: 200px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    border: none;
+    border-radius: .25rem .25rem 0px 0px;
 }
 
 a {
@@ -13,4 +17,17 @@ a {
 
 a:hover {
     color: black;
+}
+
+hr {
+    height: 1px; 
+    color: #fff; 
+    background-color: black; 
+    border: none; 
+    margin-top: 5px; 
+    margin-bottom: 1px;
+}
+
+body {
+    font-family: 'Montserrat';
 }
