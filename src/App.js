@@ -97,7 +97,8 @@ import "./App.css"
                       show: false,
                       data: null,
                       allData: data,
-                      scroll: 18 };
+                      previous: 0,
+                      next: 12 };
     }
 
     componentDidMount() {
@@ -153,7 +154,7 @@ import "./App.css"
                     </Col>
                   </Row>
                   <Row>
-                    { this.state.allData.slice(0, this.state.scroll ).map( x => {
+                    { this.state.allData.slice(this.state.previous, this.state.next ).map( x => {
                       return  <Col xs={6} lg={2} className='p-2'>
                                 <div className="border rounded h-100 shadow" onClick={ () => this.handleClick(x[0]) }>
                                   <Card className="img-container" style={{ backgroundImage: 'url('+ x[2] +')' }}>
@@ -164,9 +165,20 @@ import "./App.css"
                     })}
                     <Col xl={12}>
                       <p className="p-1"></p>
-                      <p className="p-2 text-center">
-                          <button className="btn btn-md btn-primary" onClick={() => this.setState({ scroll: this.state.scroll + 18 }) }> Load More <i className="fas fa-sync-alt"></i> </button>
-                      </p>
+                      <Row>
+                        <Col xs={6}>
+                          <p className="p-2 text-center">
+                            { this.state.previous > 0 ? <button className="btn btn-md btn-primary" onClick={() => this.setState({ previous: this.state.previous -12, next: this.state.next - 12 }) }> <i className="fas fa-angle-left"></i> Previous </button> : null }
+                              
+                          </p>
+                        </Col>
+                        <Col xs={6} className="text-right">
+                          <p className="p-2 text-center">
+                          { this.state.next < data.length ? <button className="btn btn-md btn-primary" onClick={() => this.setState({ previous: this.state.next, next: this.state.next + 12 }) }> Next <i className="fas fa-angle-right"></i> </button> : null }
+                              
+                          </p>
+                        </Col>
+                      </Row>
                     </Col>
                   </Row>
                   <Row>
