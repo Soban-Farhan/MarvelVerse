@@ -29,7 +29,7 @@ import "./App.css"
 
     handleClick(id) {
       const proxyurl = "https://cors-anywhere.herokuapp.com/"
-      fetch(proxyurl + 'https://superheroapi.com/api/2965247393590510/' + id.toString(), {
+      fetch(proxyurl + 'https://superheroapi.com/api/1588223984659099/' + id.toString(), {
         method: 'GET',
         mode: 'cors',
         headers: {
