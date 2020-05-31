@@ -28,7 +28,7 @@ import "./App.css"
     }
 
     handleClick(id) {
-      const proxyurl = "https://yacdn.org/proxy/"
+      const proxyurl = "https://cors-anywhere.herokuapp.com/"
       fetch(proxyurl + 'https://superheroapi.com/api/2965247393590510/' + id.toString(), {
         method: 'GET',
         mode: 'cors',
