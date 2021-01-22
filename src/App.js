@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-// import Carousel from 'react-bootstrap/Carousel'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import Loader from 'react-loader-spinner'
+
+// Bootstrap
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
 import Modal from 'react-bootstrap/Modal'
+
+// Hero Data
 import {data} from "./data.js";
 import "./App.css"
 
@@ -46,7 +51,6 @@ import "./App.css"
       })
       .then(res => res.json())
       .then((result) => {
-        console.log('proxyurl', proxyurl);
         this.setState({ 
           data: result,
           modalLoad: true
@@ -57,7 +61,15 @@ import "./App.css"
 
     render() {
       if(!this.state.isLoaded){
-        return <div> Loading..... </div>
+        return <p className="p-5 text-center m-0" style={{ fontSize: "1.6rem" }}> 
+                  Loading 
+                  <Loader
+                      type="ThreeDots"
+                      color="#56b7a4"
+                      width={50}
+                      height={50}
+                      />
+                </p> 
       } else {
         return  <>
                   <Row>
@@ -70,13 +82,15 @@ import "./App.css"
                   </Row>
                   <Row>
                     { this.state.result.map( x => {
-                      return  <Col xs={6} lg={2} className='p-2'>
-                                <div className="border rounded h-100 shadow" onClick={ () => this.handleClick(x[0]) }>
-                                  <Card className="img-container" style={{ backgroundImage: 'url('+ x[2] +')' }}>
-                                  </Card>
-                                  <p className="p-3" > {x[1]} </p>
-                                </div>
-                              </Col>
+                      return (
+                        <Col xs={6} lg={2} className='p-2'>
+                          <div className="border rounded h-100 shadow" onClick={ () => this.handleClick(x[0]) }>
+                            <Card className="img-container" style={{ backgroundImage: 'url('+ x[2] +')' }}>
+                            </Card>
+                            <p className="p-3" > {x[1]} </p>
+                          </div>
+                        </Col>
+                      )
                     })}
                   </Row>
                   <Row>
@@ -126,7 +140,15 @@ import "./App.css"
                     >
                       <Modal.Body>
                         { !this.state.modalLoad ? 
-                          <p> Loading </p> 
+                          <p className="p-5 text-center m-0" style={{ fontSize: "1.6rem" }}> 
+                            Loading 
+                            <Loader
+                                type="ThreeDots"
+                                color="#56b7a4"
+                                width={50}
+                                height={50}
+                                />
+                          </p> 
                         :  <>
                             <Row>
                               <Col xs={3} lg={4}>
