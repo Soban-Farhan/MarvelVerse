@@ -84,15 +84,17 @@ import "./App.css"
                     { this.state.result.map( x => {
                       return (
                         <Col xs={6} lg={2} className='p-2'>
-                          <div className="border rounded h-100 shadow" onClick={ () => this.handleClick(x[0]) }>
-                            <Card className="img-container" style={{ backgroundImage: 'url('+ x[2] +')' }}>
-                            </Card>
-                            <p className="p-3" > {x[1]} </p>
-                          </div>
+                          <button onClick={ () => this.handleClick(x[0]) } className="w-100 h-100 p-0 text-left border-transparent m-0 rounded bg-transparent">
+                            <div className="border rounded h-100 shadow">
+                              <Card className="img-container" style={{ backgroundImage: 'url('+ x[2] +')' }} />
+                              <p className="p-3" > {x[1]} </p>
+                            </div>
+                          </button>
                         </Col>
                       )
                     })}
                   </Row>
+                  <p class="p-4"></p>
                   <Row>
                     <Col xl={12}>
                         <p className="p-2"></p>
@@ -105,11 +107,12 @@ import "./App.css"
                     { this.state.allData.slice(this.state.previous, this.state.next ).map( x => {
                       return (
                         <Col xs={6} lg={2} className='p-2'>
-                          <div className="border rounded h-100 shadow" onClick={ () => this.handleClick(x[0]) }>
-                            <Card className="img-container" style={{ backgroundImage: 'url('+ x[2] +')' }}>
-                            </Card>
-                            <p className="p-3" > {x[1]} </p>
-                          </div>
+                          <button onClick={ () => this.handleClick(x[0]) } className="w-100 h-100 p-0 text-left border-transparent m-0 rounded bg-transparent">
+                            <div className="border rounded h-100 shadow">
+                              <Card className="img-container" style={{ backgroundImage: 'url('+ x[2] +')' }} />
+                              <p className="p-3" > {x[1]} </p>
+                            </div>
+                          </button>
                         </Col>
                       )
                     })}
@@ -235,6 +238,10 @@ import "./App.css"
                                   </Col>
                                   <Col lg={12}>
                                     <hr/>
+                                  </Col>
+                                  {this.state.data?.powerstats[''] }
+                                  <Col xs={6}>
+
                                   </Col>
                                 </Row>
                               </Col>
