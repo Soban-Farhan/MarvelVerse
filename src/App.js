@@ -264,18 +264,25 @@ import "./App.css"
                             <Row>
                             { Object.keys(this.state.data?.powerstats).map(x => { 
                               return (
-                                <Col xs={6} lg={4} className="text-left">
-                                  <p className="p-3 font-karla-normal">
-                                    <strong> {x.toUpperCase()}: </strong>
-                                    <br/>
-                                    <label className="font-karla-heavy" style={{
-                                      color: "#" + this.randomColor()
-                                    }}>
-                                      { <> { this.state.data?.powerstats[x] } </> }
-                                    </label>
-                                    /100
-                                  </p>
-                                </Col>
+                                <> 
+                                { this.state.data?.powerstats[x] != "null" ? 
+
+                                    <Col xs={6} lg={4} className="text-left">
+                                      <p className="p-3 font-karla-normal">
+                                        <strong> {x.toUpperCase()}: </strong>
+                                        <br/>
+                                        <label className="font-karla-heavy" style={{
+                                          color: "#" + this.randomColor()
+                                        }}>
+                                          { this.state.data?.powerstats[x] }
+                                        </label>
+                                        /100
+                                      </p>
+                                    </Col>
+                                
+                                  : null 
+                                }
+                                </>
                               )
                             }) }
                             </Row>
