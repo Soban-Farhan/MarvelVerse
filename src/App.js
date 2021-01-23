@@ -169,31 +169,31 @@ import "./App.css"
                                 <Row>
                                   <Col lg={6}>
                                     <p className="p-1 m-0">
-                                      <b><span style={{ fontSize: "13px"}}>Full Name</span></b><br/>
+                                      <strong><span style={{ fontSize: "13px"}}>Full Name</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.biography['full-name']}</h5>
                                     </p>
                                   </Col>
                                   <Col lg={6}>
                                     <p className="p-1 m-0">
-                                      <b><span style={{ fontSize: "13px"}}>Alter Ego</span></b><br/>
+                                      <strong><span style={{ fontSize: "13px"}}>Alter Ego</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.biography['alter-egos']}</h5>
                                     </p>
                                   </Col>
                                   <Col lg={12}>
                                     <p className="p-1 m-0">
-                                      <b><span style={{ fontSize: "13px"}}>Place of Birth</span></b><br/>
+                                      <strong><span style={{ fontSize: "13px"}}>Place of Birth</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.biography['place-of-birth']}</h5>
                                     </p>
                                   </Col>
                                   <Col lg={6}>
                                     <p className="p-1 m-0">
-                                      <b><span style={{ fontSize: "13px"}}>Occupation</span></b><br/>
+                                      <strong><span style={{ fontSize: "13px"}}>Occupation</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.work.occupation}</h5>
                                     </p>
                                   </Col>
                                   <Col lg={6}>
                                     <p className="p-1 m-0">
-                                      <b><span style={{ fontSize: "13px"}}>Bases (Top 3)</span></b><br/>
+                                      <strong><span style={{ fontSize: "13px"}}>Bases (Top 3)</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.work.base.split(",").slice(0, 3).map(x => <li> {x} </li>)}</h5>
                                     </p>
                                   </Col>
@@ -202,13 +202,13 @@ import "./App.css"
                                   </Col>
                                   <Col lg={6}>
                                     <p className="p-1 m-0">
-                                      <b><span style={{ fontSize: "13px"}}>Publisher</span></b><br/>
+                                      <strong><span style={{ fontSize: "13px"}}>Publisher</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.biography.publisher}</h5>
                                     </p>
                                   </Col>
                                   <Col lg={6}>
                                     <p className="p-1 m-0">
-                                      <b><span style={{ fontSize: "13px"}}>Aliases (Top 3)</span></b><br/>
+                                      <strong><span style={{ fontSize: "13px"}}>Aliases (Top 3)</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.biography.aliases.slice(0, 3).map(x => <li> {x} </li>) }</h5>
                                     </p>
                                   </Col>
@@ -217,25 +217,25 @@ import "./App.css"
                                   </Col>
                                   <Col xs={6} lg={2}>
                                     <p className="p-1 m-0">
-                                      <b><span style={{ fontSize: "13px"}}>Height</span></b><br/>
+                                      <strong><span style={{ fontSize: "13px"}}>Height</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.appearance.height[0]}"</h5>
                                     </p>
                                   </Col>
                                   <Col xs={6} lg={2}>
                                     <p className="p-1 m-0">
-                                      <b><span style={{ fontSize: "13px"}}>Weight</span></b><br/>
+                                      <strong><span style={{ fontSize: "13px"}}>Weight</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.appearance.weight[0]}</h5>
                                     </p>
                                   </Col>
                                   <Col xs={6} lg={2}>
                                     <p className="p-1 m-0">
-                                      <b><span style={{ fontSize: "13px"}}>Race</span></b><br/>
+                                      <strong><span style={{ fontSize: "13px"}}>Race</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.appearance.race}</h5>
                                     </p>
                                   </Col>
                                   <Col xs={6} lg={2}>
                                     <p className="p-1 m-0">
-                                      <b><span style={{ fontSize: "13px"}}>Gender</span></b><br/>
+                                      <strong><span style={{ fontSize: "13px"}}>Gender</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.appearance.gender}</h5>
                                     </p>
                                   </Col>
