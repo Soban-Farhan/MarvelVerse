@@ -43,3 +43,41 @@ body {
     background-color: #52b19e;
     border: .5px #52b19e solid;
 }
+
+.font-karla {
+    font-family: 'Karla';
+    font-weight: 300;
+    font-size: 34px;
+    line-height: 48px;
+}
+
+.font-karla-normal {
+    font-family: 'Karla';
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.font-karla-heavy {
+    font-family: 'Karla';
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 76px;
+}
+
+@media screen and (max-width: 990px) { 
+    .font-karla {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .font-karla-heavy {
+        font-size: 30px;
+        line-height: 34px;
+    }
+
+    .font-karla-normal {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}

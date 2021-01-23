@@ -59,6 +59,10 @@ import "./App.css"
       .catch((error) => console.error("Can’t access api. Error: " + error))
     }
 
+    randomColor() {
+      return Math.floor(Math.random()*16777215).toString(16);
+    }
+
     render() {
       if(!this.state.isLoaded){
         return <p className="p-5 text-center m-0" style={{ fontSize: "1.6rem" }}> 
@@ -75,7 +79,7 @@ import "./App.css"
                   <Row>
                     <Col xl={12}>
                         <p className="p-2"></p>
-                        <h5 className="card-title m-0" style={{ fontSize: "1.5rem" }}>FEATURED CHARACTERS</h5>
+                        <h5 className="card-title m-0 font-karla">FEATURED CHARACTERS</h5>
                         <hr className="hr"/>
                         <p class="p-2 m-0"></p>
                     </Col>
@@ -98,7 +102,7 @@ import "./App.css"
                   <Row>
                     <Col xl={12}>
                         <p className="p-2"></p>
-                        <h5 className="card-title m-0" style={{ fontSize: "1.5rem" }}>CHARACTERS LIST</h5>
+                        <h5 className="card-title m-0 font-karla">CHARACTERS LIST</h5>
                         <hr className="hr"/>
                         <p class="p-2 m-0"></p>
                     </Col>
@@ -115,14 +119,13 @@ import "./App.css"
                           </button>
                         </Col>
                       )
-                    })}
+                    }) }
                     <Col xl={12}>
                       <p className="p-1"></p>
                       <Row>
                         <Col xs={6}>
                           <p className="p-2 text-center">
                             { this.state.previous > 0 ? <button className="btn btn-md btn-primary" onClick={() => this.setState({ previous: this.state.previous -12, next: this.state.next - 12 }) }> <i className="fas fa-angle-left"></i> Previous </button> : null }
-                              
                           </p>
                         </Col>
                         <Col xs={6} className="text-right">
@@ -239,12 +242,42 @@ import "./App.css"
                                   <Col lg={12}>
                                     <hr/>
                                   </Col>
-                                  {this.state.data?.powerstats[''] }
-                                  <Col xs={6}>
-
-                                  </Col>
+                                  {/* {this.state.data?.powerstats[''] } */}
+                                  {/* <Col xs={6}>
+                                    <DonutChart 
+                                      data={[{
+                                        label: 'Give you up',
+                                        value: 25
+                                      },
+                                      {
+                                          label: '',
+                                          value: 75,
+                                          isEmpty: true
+                                      }]}
+                                      startAngle={-90}
+                                      clickToggle={false}
+                                    />
+                                  </Col> */}
                                 </Row>
                               </Col>
+                            </Row>
+                            <Row>
+                            { Object.keys(this.state.data?.powerstats).map(x => { 
+                              return (
+                                <Col xs={6} lg={4} className="text-left">
+                                  <p className="p-3 font-karla-normal">
+                                    <strong> {x.toUpperCase()}: </strong>
+                                    <br/>
+                                    <label className="font-karla-heavy" style={{
+                                      color: "#" + this.randomColor()
+                                    }}>
+                                      { <> { this.state.data?.powerstats[x] } </> }
+                                    </label>
+                                    /100
+                                  </p>
+                                </Col>
+                              )
+                            }) }
                             </Row>
                           </>
                         }
