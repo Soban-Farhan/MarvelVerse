@@ -42,7 +42,7 @@ import "./App.css"
       });
 
       const proxyurl = "https://cors-anywhere.herokuapp.com/"
-      fetch(proxyurl + 'https://superheroapi.com/api/1588223984659099/' + id.toString(), {
+      fetch(proxyurl + 'https://superheroapi.com/api/2965247393590510/' + id.toString(), {
         method: 'GET',
         mode: 'cors',
         headers: {
@@ -65,7 +65,7 @@ import "./App.css"
 
     render() {
       if(!this.state.isLoaded){
-        return <p className="p-5 text-center m-0" style={{ fontSize: "1.6rem" }}> 
+        return <div className="p-5 text-center m-0" style={{ fontSize: "1.6rem" }}> 
                   Loading 
                   <Loader
                       type="ThreeDots"
@@ -73,15 +73,15 @@ import "./App.css"
                       width={50}
                       height={50}
                       />
-                </p> 
+                </div> 
       } else {
         return  <>
                   <Row>
                     <Col xl={12}>
-                        <p className="p-2"></p>
+                        <p className="p-2" />
                         <h5 className="card-title m-0 font-karla">FEATURED CHARACTERS</h5>
                         <hr className="hr"/>
-                        <p class="p-2 m-0"></p>
+                        <p className="p-2 m-0" />
                     </Col>
                   </Row>
                   <Row>
@@ -98,13 +98,13 @@ import "./App.css"
                       )
                     })}
                   </Row>
-                  <p class="p-4"></p>
+                  <p className="p-4" />
                   <Row>
                     <Col xl={12}>
-                        <p className="p-2"></p>
+                        <p className="p-2" />
                         <h5 className="card-title m-0 font-karla">CHARACTERS LIST</h5>
                         <hr className="hr"/>
-                        <p class="p-2 m-0"></p>
+                        <p className="p-2 m-0"/>
                     </Col>
                   </Row>
                   <Row>
@@ -121,7 +121,7 @@ import "./App.css"
                       )
                     }) }
                     <Col xl={12}>
-                      <p className="p-1"></p>
+                      <p className="p-1"/>
                       <Row>
                         <Col xs={6}>
                           <p className="p-2 text-center">
@@ -146,7 +146,7 @@ import "./App.css"
                     >
                       <Modal.Body>
                         { !this.state.modalLoad ? 
-                          <p className="p-5 text-center m-0" style={{ fontSize: "1.6rem" }}> 
+                          <div className="p-5 text-center m-0" style={{ fontSize: "1.6rem" }}> 
                             Loading 
                             <Loader
                                 type="ThreeDots"
@@ -154,7 +154,7 @@ import "./App.css"
                                 width={50}
                                 height={50}
                                 />
-                          </p> 
+                          </div> 
                         :  <>
                             <Row>
                               <Col xs={3} lg={4}>
@@ -165,79 +165,79 @@ import "./App.css"
                               <Col xs={9} lg={7}>
                                 <h5 className="card-title m-0" style={{ fontSize: "1.6rem" }}>{this.state.data?.name} {/* ({this.state.data?.id}) */}</h5>
                                 <hr className="hr"/>
-                                <p class="p-1 m-0"></p>
+                                <p className="p-1 m-0"/>
                                 <Row>
                                   <Col lg={6}>
-                                    <p className="p-1 m-0">
+                                    <div className="p-1 m-0">
                                       <strong><span style={{ fontSize: "13px"}}>Full Name</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.biography['full-name']}</h5>
-                                    </p>
+                                    </div>
                                   </Col>
                                   <Col lg={6}>
-                                    <p className="p-1 m-0">
+                                    <div className="p-1 m-0">
                                       <strong><span style={{ fontSize: "13px"}}>Alter Ego</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.biography['alter-egos']}</h5>
-                                    </p>
+                                    </div>
                                   </Col>
                                   <Col lg={12}>
-                                    <p className="p-1 m-0">
+                                    <div className="p-1 m-0">
                                       <strong><span style={{ fontSize: "13px"}}>Place of Birth</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.biography['place-of-birth']}</h5>
-                                    </p>
+                                    </div>
                                   </Col>
                                   <Col lg={6}>
-                                    <p className="p-1 m-0">
+                                    <div className="p-1 m-0">
                                       <strong><span style={{ fontSize: "13px"}}>Occupation</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.work.occupation}</h5>
-                                    </p>
+                                    </div>
                                   </Col>
                                   <Col lg={6}>
-                                    <p className="p-1 m-0">
+                                    <div className="p-1 m-0">
                                       <strong><span style={{ fontSize: "13px"}}>Bases (Top 3)</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.work.base.split(",").slice(0, 3).map(x => <li> {x} </li>)}</h5>
-                                    </p>
+                                    </div>
                                   </Col>
                                   <Col lg={12}>
                                     <hr/>
                                   </Col>
                                   <Col lg={6}>
-                                    <p className="p-1 m-0">
+                                    <div className="p-1 m-0">
                                       <strong><span style={{ fontSize: "13px"}}>Publisher</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.biography.publisher}</h5>
-                                    </p>
+                                    </div>
                                   </Col>
                                   <Col lg={6}>
-                                    <p className="p-1 m-0">
+                                    <div className="p-1 m-0">
                                       <strong><span style={{ fontSize: "13px"}}>Aliases (Top 3)</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.biography.aliases.slice(0, 3).map(x => <li> {x} </li>) }</h5>
-                                    </p>
+                                    </div>
                                   </Col>
                                   <Col lg={12}>
                                     <hr/>
                                   </Col>
                                   <Col xs={6} lg={2}>
-                                    <p className="p-1 m-0">
+                                    <div className="p-1 m-0">
                                       <strong><span style={{ fontSize: "13px"}}>Height</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.appearance.height[0]}"</h5>
-                                    </p>
+                                    </div>
                                   </Col>
                                   <Col xs={6} lg={2}>
-                                    <p className="p-1 m-0">
+                                    <div className="p-1 m-0">
                                       <strong><span style={{ fontSize: "13px"}}>Weight</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.appearance.weight[0]}</h5>
-                                    </p>
+                                    </div>
                                   </Col>
                                   <Col xs={6} lg={2}>
-                                    <p className="p-1 m-0">
+                                    <div className="p-1 m-0">
                                       <strong><span style={{ fontSize: "13px"}}>Race</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.appearance.race}</h5>
-                                    </p>
+                                    </div>
                                   </Col>
                                   <Col xs={6} lg={2}>
-                                    <p className="p-1 m-0">
+                                    <div className="p-1 m-0">
                                       <strong><span style={{ fontSize: "13px"}}>Gender</span></strong><br/>
                                       <h5 className="card-title m-0" style={{ fontSize: "15px" }}>{this.state.data?.appearance.gender}</h5>
-                                    </p>
+                                    </div>
                                   </Col>
                                   <Col lg={12}>
                                     <hr/>
@@ -265,7 +265,7 @@ import "./App.css"
                             { Object.keys(this.state.data?.powerstats).map(x => { 
                               return (
                                 <> 
-                                { this.state.data?.powerstats[x] != "null" ? 
+                                { this.state.data?.powerstats[x] !== "null" ? 
 
                                     <Col xs={6} lg={4} className="text-left">
                                       <p className="p-3 font-karla-normal">
