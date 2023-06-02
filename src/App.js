@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
-import Loader from 'react-loader-spinner'
+import { ThreeDots } from 'react-loader-spinner';
 
 // Bootstrap
 import Col from 'react-bootstrap/Col'
@@ -9,7 +8,7 @@ import Card from 'react-bootstrap/Card'
 import Modal from 'react-bootstrap/Modal'
 
 // Hero Data
-import {data} from "./data.js";
+import { data } from "./data.js";
 import "./App.css"
 
   class App extends Component {
@@ -67,7 +66,7 @@ import "./App.css"
       if(!this.state.isLoaded){
         return <div className="p-5 text-center m-0" style={{ fontSize: "1.6rem" }}> 
                   Loading 
-                  <Loader
+                  <ThreeDots
                       type="ThreeDots"
                       color="#56b7a4"
                       width={50}
@@ -148,7 +147,7 @@ import "./App.css"
                         { !this.state.modalLoad ? 
                           <div className="p-5 text-center m-0" style={{ fontSize: "1.6rem" }}> 
                             Loading 
-                            <Loader
+                            <ThreeDots
                                 type="ThreeDots"
                                 color="#56b7a4"
                                 width={50}
